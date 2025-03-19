@@ -1,0 +1,12 @@
+name: Keep Render Backend Awake
+
+on:
+  schedule:
+    - cron: '*/14 * * * *' # Runs every 14 minutes
+
+jobs:
+  keep-awake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send request to keep backend awake
+        run: curl -s https://ad-connect-backend.onrender.com/ || true
