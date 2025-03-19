@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AD Connect - Email Verification Code</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 480px;
+      margin: 20px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e0e0e0;
+    }
+    .header {
+      font-size: 32px;
+      font-weight: bold;
+      color: #007bff;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .content {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+    }
+    .otp-code {
+      font-size: 28px;
+      font-weight: bold;
+      color: #007bff;
+      background-color: #f0f4ff;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      margin: 20px 0;
+      letter-spacing: 2px;
+    }
+    .note {
+      font-size: 14px;
+      color: #888;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .footer {
+      font-size: 14px;
+      color: #aaa;
+      margin-top: 30px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">AD Connect</div>
+    <div class="content">
+      <p>Hello,</p>
+      <p>Please use the following One-Time Password (OTP) to verify your email address:</p>
+      <div class="otp-code"><%= otp %></div>
+      <p>This OTP is valid for <strong>10 minutes</strong>. Do not share it with anyone for security reasons.</p>
+    </div>
+    <div class="note">
+      If you didn't request this, you can safely ignore this email.
+    </div>
+    <div class="footer">
+      &copy; AD Connect | All rights reserved
+    </div>
+  </div>
+</body>
+</html>

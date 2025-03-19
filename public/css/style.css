@@ -1,0 +1,85 @@
+/* Reset and general styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  @font-face {
+    font-family: 'lg';
+    src: url('/fonts/lg.otf');
+  }
+  
+  @font-face {
+    font-family: 'monts';
+    src: url('/fonts/monts.ttf');
+  }
+  
+  @font-face {
+    font-family: 'monts_bold';
+    src: url('/fonts/monts_bold.ttf');
+  }
+  
+  /* Body styling */
+  body {
+    background: #000;
+    color: #fff;
+    font-family: 'monts', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .container {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  /* Title styling */
+  .title-text {
+    font-family: 'lg', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Subtitle styling */
+  .subtitle {
+    font-size: 1.2rem;
+    color: #bbb;
+    margin-bottom: 20px;
+  }
+  
+  /* Routes section */
+  .routes-section {
+    background: #111;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  }
+  
+  .routes-section h2 {
+    font-family: 'monts_bold', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  /* List styling */
+  .backend-routes {
+    list-style: none;
+  }
+  
+  .backend-routes li {
+    font-size: 1rem;
+    padding: 8px;
+    background: #222;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+  
+  .backend-routes li:hover {
+    background: #333;
+  }

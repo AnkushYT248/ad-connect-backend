@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AD Connect - Backend</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title-text">AD CONNECT BACKEND!</h1>
+      <p class="subtitle">Connect your backend now!</p>
+      <div class="routes-section">
+        <h2>Backend Routes</h2>
+        <ul class="backend-routes">
+          <li>mail.js</li>
+        </ul>
+      </div>
+
+      <form id="otpForm">
+        <input type="email" id="email" placeholder="Enter your email" required />
+        <button type="submit">Send OTP</button>
+      </form>
+      <p id="responseMessage"></p>
+    </div>
+
+    <script>
+      const form = document.getElementById('otpForm');
+      const responseMessage = document.getElementById('responseMessage');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value;
+        responseMessage.textContent = '';
+
+        try {
+          const response = await fetch('/api/auth/send-otp', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email }),
+          });
+
+          const data = await response.json();
+
+          if (data.success) {
+            responseMessage.textContent = 'OTP sent successfully!';
+            responseMessage.style.color = 'green';
+          } else {
+            responseMessage.textContent = data.error;
+            responseMessage.style.color = 'red';
+          }
+        } catch (error) {
+          responseMessage.textContent = 'Failed to send OTP';
+          responseMessage.style.color = 'red';
+        }
+      });
+    </script>
+  </body>
+</html>
